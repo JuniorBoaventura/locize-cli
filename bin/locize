@@ -31,14 +31,14 @@ program
   .command('migrate')
   .alias('m')
   .description('migration of existing translation files')
-  .option('-k, --api-key <apiKey>', `The api-key that should be used`)
-  .option('-i, --project-id <projectId>', `The project-id that should be used`)
-  .option('-l, --language <lng>', `Found namespaces will be matched to this language`)
-  .option('-v, --ver <version>', `Found namespaces will be matched to this version (default: latest)`)
+  .option('-k, --api-key <apiKey>', 'The api-key that should be used')
+  .option('-i, --project-id <projectId>', 'The project-id that should be used')
+  .option('-l, --language <lng>', 'Found namespaces will be matched to this language')
+  .option('-v, --ver <version>', 'Found namespaces will be matched to this version (default: latest)')
   .option('-p, --path <path>', `Specify the path that should be used (default: ${process.cwd()})`, process.cwd())
-  .option('-L, --parse-language <true|false>', `Parse folders as language (default: true)`, 'true')
-  .option('-f, --format <json>', `File format of namespaces (default: json)`, 'json')
-  .option('-r, --replace <true|false>', `This will empty the optionally existing namespace before saving the new translations. (default: false)`, 'false')
+  .option('-L, --parse-language <true|false>', 'Parse folders as language (default: true)', 'true')
+  .option('-f, --format <json>', 'File format of namespaces (default: json)', 'json')
+  .option('-r, --replace <true|false>', 'This will empty the optionally existing namespace before saving the new translations. (default: false)', 'false')
   .option('-c, --config-path <configPath>', `Specify the path to the optional locize config file (default: ${home})`)
   .action((cmd) => {
     try {
@@ -92,10 +92,10 @@ program
   .command('add <namespace> <key> <value>')
   .alias('a')
   .description('add a new key')
-  .option('-k, --api-key <apiKey>', `The api-key that should be used`)
-  .option('-i, --project-id <projectId>', `The project-id that should be used`)
-  .option('-l, --language <lng>', `The language that should be targeted`)
-  .option('-v, --ver <version>', `The version that should be targeted (default: latest)`)
+  .option('-k, --api-key <apiKey>', 'The api-key that should be used')
+  .option('-i, --project-id <projectId>', 'The project-id that should be used')
+  .option('-l, --language <lng>', 'The language that should be targeted')
+  .option('-v, --ver <version>', 'The version that should be targeted (default: latest)')
   .option('-c, --config-path <configPath>', `Specify the path to the optional locize config file (default: ${home})`)
   .action((namespace, key, value, cmd) => {
     try {
@@ -151,10 +151,10 @@ program
   .command('remove <namespace> <key>')
   .alias('rm')
   .description('remove a key')
-  .option('-k, --api-key <apiKey>', `The api-key that should be used`)
-  .option('-i, --project-id <projectId>', `The project-id that should be used`)
-  .option('-l, --language <lng>', `The language that should be targeted`)
-  .option('-v, --ver <version>', `The version that should be targeted (default: latest)`)
+  .option('-k, --api-key <apiKey>', 'The api-key that should be used')
+  .option('-i, --project-id <projectId>', 'The project-id that should be used')
+  .option('-l, --language <lng>', 'The language that should be targeted')
+  .option('-v, --ver <version>', 'The version that should be targeted (default: latest)')
   .option('-c, --config-path <configPath>', `Specify the path to the optional locize config file (default: ${home})`)
   .action((namespace, key, cmd) => {
     try {
@@ -210,16 +210,16 @@ program
   .command('download')
   .alias('dl')
   .description('download a namespace')
-  .option('-i, --project-id <projectId>', `The project-id that should be used`)
-  .option('-v, --ver <version>', `The version that should be targeted (default: latest)`)
-  .option('-l, --language <lng>', `The language that should be targeted`)
-  .option('-n, --namespace <ns>', `The namespace that should be targeted`)
-  .option('-t, --target <target>', `The target directory`, process.cwd())
+  .option('-i, --project-id <projectId>', 'The project-id that should be used')
+  .option('-v, --ver <version>', 'The version that should be targeted (default: latest)')
+  .option('-l, --language <lng>', 'The language that should be targeted')
+  .option('-n, --namespace <ns>', 'The namespace that should be targeted')
+  .option('-t, --target <target>', 'The target directory', process.cwd())
   .option('-g, --get-path <url>', `Specify the get-path url that should be used (default: ${getPathUrl})`)
-  .option('-k, --api-key <apiKey>', `The api-key that should be used`)
-  .option('-f, --format <json>', `File format of namespaces (default: json; [flat, xliff2, xliff12, android, yaml, csv, xlsx, po, strings, resx])`, 'json')
-  .option('-s, --skip-empty <true|false>', `Skips to download empty files (default: true)`, 'true')
-  .option('-rl, --referenceLanguage <lng>', `The language that should be used as source (used for xliff or csv or xlsx format)`)
+  .option('-k, --api-key <apiKey>', 'The api-key that should be used')
+  .option('-f, --format <json>', 'File format of namespaces (default: json; [flat, xliff2, xliff12, android, yaml, csv, xlsx, po, strings, resx])', 'json')
+  .option('-s, --skip-empty <true|false>', 'Skips to download empty files (default: true)', 'true')
+  .option('-rl, --referenceLanguage <lng>', 'The language that should be used as source (used for xliff or csv or xlsx format)')
   .option('-c, --config-path <configPath>', `Specify the path to the optional locize config file (default: ${home})`)
   .action((cmd) => {
     try {
@@ -280,9 +280,9 @@ program
   .command('get <namespace> <key>')
   .alias('g')
   .description('get a key')
-  .option('-i, --project-id <projectId>', `The project-id that should be used`)
-  .option('-l, --language <lng>', `The language that should be targeted`)
-  .option('-v, --ver <version>', `The version that should be targeted (default: latest)`)
+  .option('-i, --project-id <projectId>', 'The project-id that should be used')
+  .option('-l, --language <lng>', 'The language that should be targeted')
+  .option('-v, --ver <version>', 'The version that should be targeted (default: latest)')
   .option('-c, --config-path <configPath>', `Specify the path to the optional locize config file (default: ${home})`)
   .action((namespace, key, cmd) => {
     try {
@@ -329,14 +329,15 @@ program
   .command('sync')
   .alias('s')
   .description('synchronizes locize with your repository (or any other local directory)')
-  .option('-k, --api-key <apiKey>', `The api-key that should be used`)
-  .option('-i, --project-id <projectId>', `The project-id that should be used`)
-  .option('-v, --ver <version>', `Found namespaces will be matched to this version (default: latest)`)
+  .option('-k, --api-key <apiKey>', 'The api-key that should be used')
+  .option('-i, --project-id <projectId>', 'The project-id that should be used')
+  .option('-v, --ver <version>', 'Found namespaces will be matched to this version (default: latest)')
   .option('-p, --path <path>', `Specify the path that should be used (default: ${process.cwd()})`, process.cwd())
-  .option('-f, --format <json>', `File format of namespaces (default: json; [flat, xliff2, xliff12, android, yaml, csv, xlsx, po, strings, resx])`, 'json')
-  .option('-c, --clean <true|false>', `Removes all local files (default: false)`, 'false')
-  .option('-d, --dry <true|false>', `Dry run (default: false)`, 'false')
+  .option('-f, --format <json>', 'File format of namespaces (default: json; [flat, xliff2, xliff12, android, yaml, csv, xlsx, po, strings, resx])', 'json')
+  .option('-c, --clean <true|false>', 'Removes all local files (default: false)', 'false')
+  .option('-d, --dry <true|false>', 'Dry run (default: false)', 'false')
   .option('-c, --config-path <configPath>', `Specify the path to the optional locize config file (default: ${home})`)
+  .option('-r, --remove <true|false>', 'Specify if it should remove the remote keys that haven\'t been synced yet', 'true')
   .action((cmd) => {
     try {
       config = ini.parse(fs.readFileSync(cmd.configPath || home, 'utf-8'));
@@ -366,7 +367,7 @@ program
 
     const clean = cmd.clean === 'true';
     const dry = cmd.dry === 'true';
-
+    const remove = cmd.remove === 'true';
     sync({
       apiPath: url.parse(getPath).protocol + '//' + url.parse(getPath).host,
       apiKey: apiKey,
@@ -375,7 +376,8 @@ program
       path: cmd.path,
       format: cmd.format,
       clean: clean,
-      dry: dry
+      dry: dry,
+      remove: remove,
     });
   })
   .on('--help', () => {
@@ -391,9 +393,9 @@ program
   .command('copy-version <fromVersion>')
   .alias('cv')
   .description('copy version')
-  .option('-k, --api-key <apiKey>', `The api-key that should be used`)
-  .option('-v, --ver <version>', `The target version to be used to copy to (default: latest)`)
-  .option('-i, --project-id <projectId>', `The project-id that should be used`)
+  .option('-k, --api-key <apiKey>', 'The api-key that should be used')
+  .option('-v, --ver <version>', 'The target version to be used to copy to (default: latest)')
+  .option('-i, --project-id <projectId>', 'The project-id that should be used')
   .option('-c, --config-path <configPath>', `Specify the path to the optional locize config file (default: ${home})`)
   .action((fromVersion, cmd) => {
     try {
@@ -439,9 +441,9 @@ program
   .command('publish-version')
   .alias('pv')
   .description('publish version')
-  .option('-k, --api-key <apiKey>', `The api-key that should be used`)
-  .option('-v, --ver <version>', `The version to be used to publish (default: latest)`)
-  .option('-i, --project-id <projectId>', `The project-id that should be used`)
+  .option('-k, --api-key <apiKey>', 'The api-key that should be used')
+  .option('-v, --ver <version>', 'The version to be used to publish (default: latest)')
+  .option('-i, --project-id <projectId>', 'The project-id that should be used')
   .option('-c, --config-path <configPath>', `Specify the path to the optional locize config file (default: ${home})`)
   .action((cmd) => {
     try {

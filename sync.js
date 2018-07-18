@@ -535,9 +535,11 @@ const sync = (opt, cb) => {
           var wasThereSomethingToUpdate = false;
           async.each(compared, (ns, clb) => {
             if (!cb) {
-              if (ns.diff.toRemove.length > 0) {
+              if (ns.diff.toRemove.length > 0 && opt.remove) {
                 console.log(colors.red(`removing ${ns.diff.toRemove.length} keys in ${ns.namespace}...`));
                 if (opt.dry) console.log(colors.red(`would remove ${ns.diff.toRemove.join(', ')} in ${ns.namespace}...`));
+              } else {
+                ns.diff.toRemove = [];
               }
               if (ns.diff.toAdd.length > 0) {
                 console.log(colors.green(`adding ${ns.diff.toAdd.length} keys in ${ns.namespace}...`));
